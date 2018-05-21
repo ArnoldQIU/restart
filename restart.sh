@@ -1,2 +1,2 @@
 #!/bin/bash
-mkdir node1
+echo "123">123.txt
