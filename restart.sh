@@ -1,3 +1,3 @@
 #!/bin/bash
-cd /home
-echo "123">123.txt
+cd /home/controlscriipt
+cp ui.sh /home/tmp
