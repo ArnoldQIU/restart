@@ -17,6 +17,7 @@ GENERATE_KEY='#!/bin/bash
 	&& echo -ne "\n" | geth account new --password ./passwords.txt --keystore . \
 	&& mv UTC* key'
 echo "$GENERATE_KEY" > GENERATE_KEY.sh && chmod 755 GENERATE_KEY.sh && sh GENERATE_KEY.sh
+echo -ne '\n'
 GENERATE_CONSTELLATION_START='#!/bin/bash
     set -u
     set -e
@@ -37,3 +38,4 @@ GENERATE_CONSTELLATION_START='#!/bin/bash
         fi
     done'
 echo "$GENERATE_CONSTELLATION_START" > constellation-start.sh && chmod 755 constellation-start.sh && sh constellation-start.sh
+echo -ne '\n'
