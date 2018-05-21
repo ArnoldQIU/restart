@@ -1,3 +1,3 @@
 #!/bin/bash
-cd /home/controlscriipt
+cd /home/controlscript
 cp ui.sh /home/tmp
