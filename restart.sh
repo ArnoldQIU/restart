@@ -1,3 +1,3 @@
 #!/bin/bash
-mkdir /home/node
-mv /controlscript /home/tmp
+mkdir /home/node-tmp
+mv /controlscript/ui.sh /home/tmp
