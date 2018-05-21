@@ -38,4 +38,7 @@ GENERATE_CONSTELLATION_START='#!/bin/bash
         fi
     done'
 echo "$GENERATE_CONSTELLATION_START" > constellation-start.sh && chmod 755 constellation-start.sh && sh constellation-start.sh
-echo -ne '\n'
+echo "Generate permissioned-nodes.json in local"
+ENODE=$(cat /home/node/enode.key)
+COMBINE="enode://"$(echo \$ENODE)"@"$(echo \$SERVICE_IP)":21000?discport=0\"&\"raftport=50400"
+echo $COMBINE >> tmp/permissioned-nodes.json
