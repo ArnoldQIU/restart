@@ -41,6 +41,9 @@ echo "$GENERATE_CONSTELLATION_START" > constellation-start.sh && chmod 755 const
 echo "Generate permissioned-nodes.json in local"
 ENODE=$(cat /home/node/enode.key)
 COMBINE="enode://"$ENODE"@"$SERVICE_IP":21000?discport=0\"&\"raftport=50400"
-cd /home && echo $COMBINE >> permissioned-nodes.json
-## cd /home/node && chmod 755 *.sh && ./stop.sh
-## cd /home/node && ./raft-init.sh && ./raft-start.sh
+cd /home/node 
+echo $COMBINE >> permissioned-nodes.json
+cp permissioned-nodes.json /home/node/qdata/dd/static-nodes.json
+cp permissioned-nodes.json /home/node/qdata/dd/
+cd /home/node && chmod 755 *.sh && ./stop.sh
+cd /home/node && ./raft-init.sh && ./raft-start.sh
