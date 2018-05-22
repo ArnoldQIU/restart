@@ -42,4 +42,6 @@ echo "Generate permissioned-nodes.json in local"
 ENODE=$(cat /home/node/enode.key)
 COMBINE="enode://"$ENODE"@"$SERVICE_IP":21000?discport=0\"&\"raftport=50400"
 cd /home
-echo $COMBINE >> tmp/permissioned-nodes.json
+echo $COMBINE >> permissioned-nodes.json
+cd /home/node && ./stop.sh
+cd /home/node && ./raft-init.sh && ./raft-start.sh
