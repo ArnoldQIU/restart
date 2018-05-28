@@ -43,7 +43,9 @@ ENODE=$(cat /home/node/enode.key)
 COMBINE="enode://"$ENODE"@"$SERVICE_IP":21000?discport=0\"&\"raftport=50400"
 cd /home/node 
 echo $COMBINE >> permissioned-nodes.json
+sed -i -e 's/.*/"&",/' -e '$ s/.$//' -e '1i[' -e '$a]' node_default/permissioned-nodes.json
 cp permissioned-nodes.json /home/node/qdata/dd/static-nodes.json
 cp permissioned-nodes.json /home/node/qdata/dd/
 cd /home/node && chmod 755 *.sh && ./stop.sh
 cd /home/node && ./raft-init.sh && ./raft-start.sh
+
