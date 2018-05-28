@@ -13,4 +13,3 @@ cp permissioned-nodes.json /home/node
 cd /home/node
 cp permissioned-nodes.json /home/node/qdata/dd/static-nodes.json
 cp permissioned-nodes.json /home/node/qdata/dd/
-cd /home/node && chmod 755 *.sh && ./stop.sh
