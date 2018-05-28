@@ -9,6 +9,9 @@ cp passwords.txt /home/node/
 cp raft-init.sh /home/node/
 cp raft-start.sh /home/node/
 cp stop.sh /home/node
+cd /home/node
+cp permissioned-nodes.json /home/node/qdata/dd/static-nodes.json
+cp permissioned-nodes.json /home/node/qdata/dd/
 cd /home/node && chmod 755 *.sh && ./stop.sh
 cd /home/node && ./raft-init.sh && ./raft-start.sh
 
