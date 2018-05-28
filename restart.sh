@@ -42,10 +42,6 @@ echo "Generate permissioned-nodes.json in local"
 ENODE=$(cat /home/node/enode.key)
 COMBINE="enode://"$(echo $ENODE)"@"$(echo $SERVICE_IP)":21000?discport=0\"&\"raftport=50400"
 cd /home/node 
-echo $COMBINE >> permissioned-nodes.json
-cd /home/node && sed -i -e 's/.*/"&",/' -e '$ s/.$//' -e '1i[' -e '$a]' permissioned-nodes.json
-cp permissioned-nodes.json /home/node/qdata/dd/static-nodes.json
-cp permissioned-nodes.json /home/node/qdata/dd/
 cd /home/node && chmod 755 *.sh && ./stop.sh
 cd /home/node && ./raft-init.sh && ./raft-start.sh
 
