@@ -40,7 +40,7 @@ GENERATE_CONSTELLATION_START='#!/bin/bash
 echo "$GENERATE_CONSTELLATION_START" > constellation-start.sh && chmod 755 constellation-start.sh && sh constellation-start.sh
 echo "Generate permissioned-nodes.json in local"
 ENODE=$(cat /home/node/enode.key)
-COMBINE="enode://"\$ENODE"@"\$SERVICE_IP":21000?discport=0\"&\"raftport=50400"
+COMBINE="enode://"$ENODE"@"$SERVICE_IP":21000?discport=0\"&\"raftport=50400"
 cd /home/node 
 echo $COMBINE >> permissioned-nodes.json
 cd /home/node && sed -i -e 's/.*/"&",/' -e '$ s/.$//' -e '1i[' -e '$a]' permissioned-nodes.json
