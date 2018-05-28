@@ -14,5 +14,3 @@ cd /home/node
 cp permissioned-nodes.json /home/node/qdata/dd/static-nodes.json
 cp permissioned-nodes.json /home/node/qdata/dd/
 cd /home/node && chmod 755 *.sh && ./stop.sh
-cd /home/node && ./raft-init.sh && ./raft-start.sh
-
